@@ -91,6 +91,8 @@ Bundle 'matchit.zip'
 Bundle 'Wombat'
 " Yank history navigation
 Bundle 'YankRing.vim'
+" Dockerfile syntax
+Bundle "ekalinin/Dockerfile.vim"
 
 " Installing plugins the first time
 if iCanHazVundle == 0
@@ -236,7 +238,7 @@ let g:pymode_lint_signs = 0
 " don't fold python code on open
 let g:pymode_folding = 0
 " don't load rope by default. Change to 1 to use rope
-let g:pymode_rope = 0
+let g:pymode_rope = 1
 " open definitions on same window, and with my custom mapping
 let g:pymode_rope_goto_definition_bind = ',d'
 let g:pymode_rope_goto_definition_cmd = 'e'
@@ -331,13 +333,13 @@ vmap <expr> D DVB_Duplicate()
 
 " to use fancy symbols for airline, uncomment the following lines and use a
 " patched font (more info on the README.rst)
-"if !exists('g:airline_symbols')
-"   let g:airline_symbols = {}
-"endif
-"let g:airline_left_sep = '⮀'
-"let g:airline_left_alt_sep = '⮁'
-"let g:airline_right_sep = '⮂'
-"let g:airline_right_alt_sep = '⮃'
-"let g:airline_symbols.branch = '⭠'
-"let g:airline_symbols.readonly = '⭤'
-"let g:airline_symbols.linenr = '⭡'
+if !exists('g:airline_symbols')
+   let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
