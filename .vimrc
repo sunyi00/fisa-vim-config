@@ -93,6 +93,37 @@ Bundle 'Wombat'
 Bundle 'YankRing.vim'
 " Dockerfile syntax
 Bundle "ekalinin/Dockerfile.vim"
+" Tabulate
+Bundle "godlygeek/tabular"
+" Puppet syntax
+Bundle "rodjek/vim-puppet"
+" Markdown syntax
+Bundle "tpope/vim-markdown"
+" Syntax Range
+Bundle "vim-scripts/SyntaxRange"
+
+Bundle "fatih/vim-go"
+
+Bundle "reinh/vim-makegreen"
+
+Bundle "alfredodeza/pytest.vim"
+
+Bundle 'chase/vim-ansible-yaml'
+
+Plugin 'rizzatti/dash.vim'
+
+Plugin 'rking/ag.vim'
+
+" YAPF formatter for Python
+Plugin 'pignacio/vim-yapf-format'
+
+map <C-o> :%YapfFormat<CR>
+imap <C-o> <ESC>:YapfFormat<CR>i
+vmap <C-o> :YapfFormat<CR>
+
+" Plugin 'tpope/fugitive.vim' "conflicts with NERDTree
+
+nmap <silent> <leader>d <Plug>DashSearch
 
 " Installing plugins the first time
 if iCanHazVundle == 0
@@ -277,6 +308,7 @@ if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
 	let &t_Co = 256
     " color
     colorscheme fisa
+    "colorscheme molokai
 else
     " color
     colorscheme delek
@@ -343,3 +375,8 @@ let g:airline_right_alt_sep = '⮃'
 let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
+
+filetype indent on
+autocmd FileType yaml setlocal et sta sw=2 sts=2
+
+let g:molokai_original = 1
