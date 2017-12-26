@@ -1,6 +1,12 @@
 " no vi-compatible
 set nocompatible
 
+" python2 and python3
+set pythonhome=$HOME/.pyenv/versions/2.7.14
+set pythondll=$HOME/.pyenv/versions/2.7.14/lib/libpython2.7.dylib
+set pythonthreehome=$HOME/.pyenv/versions/3.6.3
+set pythonthreedll=$HOME/.pyenv/versions/3.6.3/lib/libpython3.6m.dylib
+
 " Setting up Vundle - the vim plugin bundler
 let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
