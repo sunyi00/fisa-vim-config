@@ -88,7 +88,7 @@ Bundle 'fisadev/dragvisuals.vim'
 " Bundles from vim-scripts repos
 
 " Python code checker
-Bundle 'pyflakes.vim'
+" Bundle 'pyflakes.vim'
 " Search results counter
 Bundle 'IndexedSearch'
 " XML/HTML tags navigation
@@ -263,15 +263,17 @@ nmap ,wR :RecurGrep <cword><CR>
 nmap ,wr :RecurGrepFast <cword><CR>
 
 " python-mode settings
+" use python3
+let g:pymode_python = 'python3'
 " don't show lint result every time we save a file
-let g:pymode_lint_on_write = 0
+let g:pymode_lint_on_write = 1
 " run pep8+pyflakes+pylint validator with \8
 autocmd FileType python map <buffer> <leader>8 :PymodeLint<CR>
 " rules to ignore (example: "E501,W293")
-let g:pymode_lint_ignore = ""
+let g:pymode_lint_ignore = "C901"
 " don't add extra column for error icons (on console vim creates a 2-char-wide
 " extra column)
-let g:pymode_lint_signs = 0
+let g:pymode_lint_signs = 1
 " don't fold python code on open
 let g:pymode_folding = 0
 " don't load rope by default. Change to 1 to use rope
